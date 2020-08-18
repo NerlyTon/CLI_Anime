@@ -10,7 +10,15 @@ class API
     
     action_instances = action_arr.map do |action_h|
     Anime.new(action_h)
-        end
+        
+    end
+
+    action_instances.each.with_index(1) do |k, i|
+        puts "#{i}. #{k.title}"
+    
+    end
+    
+        # binding.pry
     end
 
     def self.adventure

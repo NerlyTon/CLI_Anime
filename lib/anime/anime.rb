@@ -7,10 +7,6 @@ attr_accessor :title, :url, :synopsis, :type, :episodes, :score
 #     attributes.each {|key, value| self.send(("#{key}="), value)}
     
 # end
-
-
-
-
     def initialize(hash)
         self.title = hash[:title]
         self.url = hash[:url]
@@ -24,5 +20,9 @@ attr_accessor :title, :url, :synopsis, :type, :episodes, :score
     def self.all
         @@all
     end
+
+    # def more_info
+        
+    # end
 
 end

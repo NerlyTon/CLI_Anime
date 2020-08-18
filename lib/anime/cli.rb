@@ -1,3 +1,4 @@
+require 'pry'
 class CLI
 
     def start
@@ -15,6 +16,7 @@ class CLI
             10.Psychological
             11.Thriller"
         genre
+        anime_information
     end
 
     def genre
@@ -25,10 +27,11 @@ class CLI
             case input 
             when 'Action'
                 API.action 
+                anime_information
             when 'Adventure'
                 API.adventure 
             when 'Comedy'
-                API.comdey 
+                API.comedy 
             when 'Mystery'
                 API.mystery
             when 'Drama'
@@ -51,15 +54,39 @@ class CLI
                 "Please type in a valid request"
             end
         end
+        
     end
 
     def anime_information
-    
-    end
+        puts "Please type the number of the anime you would like more information of."
+        input = ""
+        while input != "exit"
+            input = gets.strip.to_i
+        if (1..Anime.all.length).include?(input)
+            anime = Anime.all[input - 1]
+            puts "Anime Title:#{anime.title}, 
+            Synopsis:#{anime.synopsis}, 
+            URL:#{anime.url}, 
+            Type:#{anime.type}, 
+            Number of Episodes:#{anime.episodes}, 
+            Score:#{anime.score}" 
+        end
+        puts "Would you like to go back or exit?"
+         input = gets.strip
+         if input == "go back"
+            start
+         else
+            exit
+         end
+        end
 
+    end
+end
+
+    
 
         
-end
+
 
 
         
