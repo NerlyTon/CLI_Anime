@@ -36,13 +36,14 @@ class API
     
     def self.get_info(num)
             action = RestClient.get "https://api.jikan.moe/v3/genre/anime/#{num}/1" 
-            # binding.pry
+            
             action_hash = JSON.parse(action.body, symbolize_names:true)
             action_arr = action_hash[:anime]
             
             action_instances = action_arr.map do |action_h|
             Anime.new(action_h)
         end
+        # binding.pry
     end
 end
 

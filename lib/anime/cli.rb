@@ -19,24 +19,58 @@ class CLI
         genre
     end
 
+    
     def genre
         input = ""
-        while input != "exit"
+        if input != "exit"
             input = gets.strip.downcase
             API.genres(input)
-
+            
             display_name
             anime_information
         end
-        
     end
-def display_name
+
+       
+       
+            # input != API.genres(input)
+            # puts "Please input valid request"
+            
+
+        
+     def display_name
     Anime.all.each.with_index(1) do |k, i|
         puts "#{i}. #{k.title}"
+        end
+    end
+
+    
+    def anime_information
+    puts "Please type the number of the anime you would like more information of."
+    input = ""
+        while input != "exit"
+        input = gets.strip.to_i
+            if (1..Anime.all.length).include?(input)
+        anime = Anime.all[input - 1]
+        puts "---------------- Anime Title:#{anime.title}, ----------------------
+Synopsis:#{anime.synopsis}, 
+URL:#{anime.url}, 
+Type:#{anime.type}, 
+Number of Episodes:#{anime.episodes}, 
+Score:#{anime.score}" 
+            end
+        puts "Would you like to go back or exit?"
+        input = gets.strip
+            if input == "go back"
+            start
+        else
+            exit
+            end
+        end
     end
 end
 
-            
+   
             
             
             
@@ -84,31 +118,7 @@ end
         
     # end
 
-    def anime_information
-        puts "Please type the number of the anime you would like more information of."
-        input = ""
-        while input != "exit"
-            input = gets.strip.to_i
-        if (1..Anime.all.length).include?(input)
-            anime = Anime.all[input - 1]
-            puts "---------------- Anime Title:#{anime.title}, ----------------------
-Synopsis:#{anime.synopsis}, 
-URL:#{anime.url}, 
-Type:#{anime.type}, 
-Number of Episodes:#{anime.episodes}, 
-Score:#{anime.score}" 
-        end
-        puts "Would you like to go back or exit?"
-         input = gets.strip
-         if input == "go back"
-            start
-         else
-            exit
-         end
-        end
-
-    end
-end
+    
 
     
 
