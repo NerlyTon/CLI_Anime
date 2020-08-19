@@ -11,16 +11,15 @@ class API
     action_instances = action_arr.map do |action_h|
     Anime.new(action_h)
         
-    end
+        end
 
-    action_instances.each.with_index(1) do |k, i|
+        action_instances.each.with_index(1) do |k, i|
         puts "#{i}. #{k.title}"
     
-    end
-    
-        # binding.pry
+        end
     end
 
+    
     def self.adventure
 
     adventure = RestClient.get 'https://api.jikan.moe/v3/genre/anime/2/1'
@@ -30,9 +29,12 @@ class API
     adventure_instances = adventure_arr.map do |adv_hash|
         Anime.new(adv_hash)
         end
-        binding.pry
+        adventure_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
+        end
     end
 
+    
     def self.comedy
 
     comedy = RestClient.get 'https://api.jikan.moe/v3/genre/anime/4/1'
@@ -42,8 +44,12 @@ class API
     comedy_instances = comedy_arr.map do |comedy_hash|
         Anime.new(comedy_hash)
         end
+        comedy_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
+        end
     end
 
+    
     def self.mystery
 
     mystery = RestClient.get 'https://api.jikan.moe/v3/genre/anime/7/1'
@@ -53,8 +59,12 @@ class API
     mystery_instances = mystery_arr.map do |mystery_hash|
         Anime.new(mystery_hash)
         end
+        mystery_instances.each.with_index(1) do |k, i|
+        puts "#{i}. #{k.title}"
+        end
     end
 
+    
     def self.drama
 
     drama = RestClient.get 'https://api.jikan.moe/v3/genre/anime/8/1'
@@ -64,8 +74,12 @@ class API
     drama_instances = drama_arr.map do |drama_hash|
         Anime.new(drama_hash)
         end
+        drama_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
+        end
     end
 
+    
     def self.fantasy
 
     fantasy = RestClient.get 'https://api.jikan.moe/v3/genre/anime/10/1'
@@ -74,6 +88,9 @@ class API
     
     fantasy_instances = fantasy_arr.map do |fantasy_hash|
         Anime.new(fantasy_hash)
+        end
+        fantasy_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
         end
     end
 
@@ -87,6 +104,9 @@ class API
     kids_instances = kids_arr.map do |kids_hash|
         Anime.new(kids_hash)
         end
+        kids_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
+        end
     end
 
 
@@ -98,6 +118,9 @@ class API
     
     romance_instances = romance_arr.map do |romance_hash|
         Anime.new(romance_hash)
+        end
+        romance_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
         end
     end
 
@@ -111,8 +134,12 @@ class API
     super_power_instances = super_power_arr.map do |super_power_hash|
         Anime.new(super_power_hash)
         end
+        super_power_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
+        end
     end
 
+    
     def self.psychological
 
     psychological = RestClient.get 'https://api.jikan.moe/v3/genre/anime/40/1'
@@ -121,6 +148,9 @@ class API
     
     psychological_instances = psychological_arr.map do |psychological_hash|
         Anime.new(psychological_hash)
+        end
+        psychological_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
         end
     end
 
@@ -134,6 +164,9 @@ class API
     
     thriller_instances = thriller_arr.map do |thriller_hash|
         Anime.new(thriller_hash)
+        end
+        thriller_instances.each.with_index(1) do |k, i|
+            puts "#{i}. #{k.title}"
         end
     end
 

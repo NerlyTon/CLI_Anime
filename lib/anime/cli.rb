@@ -3,18 +3,19 @@ class CLI
 
     def start
         puts "Welcome anime fan!"
-        puts "Please choose a genre by name or the top50 list."
-        puts "1.Action
-            2.Adventure
-            3.Comedy
-            4.Mystery
-            5.Drama
-            6.Fantasy
-            7.Kids
-            8.Romance
-            9.Super Power
-            10.Psychological
-            11.Thriller"
+        puts "Please choose a genre by name."
+        puts ""
+        puts   "1.Action 
+2.Adventure 
+3.Comedy 
+4.Mystery 
+5.Drama 
+6.Fantasy 
+7.Kids 
+8.Romance 
+9.Super Power 
+10.Psychological 
+11.Thriller"
         genre
         anime_information
     end
@@ -29,25 +30,35 @@ class CLI
                 API.action 
                 anime_information
             when 'Adventure'
-                API.adventure 
+                API.adventure
+                anime_information 
             when 'Comedy'
-                API.comedy 
+                API.comedy
+                anime_information 
             when 'Mystery'
                 API.mystery
+                anime_information
             when 'Drama'
-                API.drama 
+                API.drama
+                anime_information 
             when 'Fantasy'
                 API.fantasy
+                anime_information
             when 'Kids'
-                API.kids 
+                API.kids
+                anime_information 
             when 'Romance'
-                API.romance 
+                API.romance
+                anime_information 
             when 'Super Power'
                 API.super_power
+                anime_information
             when 'Psychological'
-                API.psychological 
+                API.psychological
+                anime_information 
             when 'Thriller'
                 API.thriller
+                anime_information
             when 'exit'
                 exit
             else
@@ -64,12 +75,12 @@ class CLI
             input = gets.strip.to_i
         if (1..Anime.all.length).include?(input)
             anime = Anime.all[input - 1]
-            puts "Anime Title:#{anime.title}, 
-            Synopsis:#{anime.synopsis}, 
-            URL:#{anime.url}, 
-            Type:#{anime.type}, 
-            Number of Episodes:#{anime.episodes}, 
-            Score:#{anime.score}" 
+            puts "---------------- Anime Title:#{anime.title}, ----------------------
+Synopsis:#{anime.synopsis}, 
+URL:#{anime.url}, 
+Type:#{anime.type}, 
+Number of Episodes:#{anime.episodes}, 
+Score:#{anime.score}" 
         end
         puts "Would you like to go back or exit?"
          input = gets.strip
