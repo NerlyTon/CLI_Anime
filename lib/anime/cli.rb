@@ -29,6 +29,8 @@ class CLI
             display_name
             anime_information
         end
+            
+        
     end
 
        
