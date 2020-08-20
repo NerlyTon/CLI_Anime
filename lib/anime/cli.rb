@@ -24,24 +24,18 @@ class CLI
         input = ""
         if input != "exit"
             input = gets.strip.downcase
+            
             API.genres(input)
             
             display_name
             anime_information
         end
-            
-        
     end
 
        
        
-            # input != API.genres(input)
-            # puts "Please input valid request"
-            
-
-        
-     def display_name
-    Anime.all.each.with_index(1) do |k, i|
+    def display_name
+        Anime.all.sort {|a, b| a.title <=> b.title}.each.with_index(1) do |k, i|
         puts "#{i}. #{k.title}"
         end
     end
@@ -53,7 +47,8 @@ class CLI
         while input != "exit"
         input = gets.strip.to_i
             if (1..Anime.all.length).include?(input)
-        anime = Anime.all[input - 1]
+        anime = Anime.all.sort_by(&:title)[input - 1]
+        
         puts "---------------- Anime Title:#{anime.title}, ----------------------
 Synopsis:#{anime.synopsis}, 
 URL:#{anime.url}, 
@@ -65,18 +60,24 @@ Score:#{anime.score}"
         input = gets.strip
             if input == "go back"
             start
-        else
+            if input == "exit"
             exit
+            else
+            puts "Please input valid number"
+                end
             end
         end
     end
 end
 
-   
+    
+    # input != API.genres(input)
+    # puts "Please input valid request"
             
-            
-            
-            
+    # def valid
+    #     input == 
+        
+         
     #         case input 
     #         when 'Action'
     #             API.action 

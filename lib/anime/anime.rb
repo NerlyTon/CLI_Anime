@@ -3,10 +3,6 @@ class Anime
 attr_accessor :title, :url, :synopsis, :type, :episodes, :score 
 @@all = []
 
-# def initialize(attributes)
-#     attributes.each {|key, value| self.send(("#{key}="), value)}
-    
-# end
     def initialize(hash)
         self.title = hash[:title]
         self.url = hash[:url]
@@ -21,8 +17,12 @@ attr_accessor :title, :url, :synopsis, :type, :episodes, :score
         @@all
     end
 
-    # def more_info
+end
+
+# def initialize(attributes)
+#     attributes.each {|key, value| self.send(("#{key}="), value)}
+    
+# end
+# def more_info
         
     # end
-
-end

@@ -28,10 +28,13 @@ class API
             self.get_info(41)
         when "exit"
             exit
+            
         else
-            "Please type in a valid request"
+            puts "Please type in a valid request"
+            
         end
     end
+    
     
     
     def self.get_info(num)
@@ -43,15 +46,15 @@ class API
             instances = arr.map do |hash|
             Anime.new(hash)
         end
-        # binding.pry
+        
     end
 end
 
     
     
     
-    
-    
+    # binding.pry
+    # API.genres(input)
         # def self.action
 
     # action = RestClient.get 'https://api.jikan.moe/v3/genre/anime/1/1' 
