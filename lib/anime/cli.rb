@@ -13,7 +13,7 @@ class CLI
 6.Fantasy 
 7.Kids 
 8.Romance 
-9.Super Power 
+9.Super Powers 
 10.Psychological 
 11.Thriller"
         genre
@@ -22,14 +22,12 @@ class CLI
     
     def genre
         input = ""
-        if input != "exit"
-            input = gets.strip.downcase
-            
+        input = gets.strip.downcase
+        if input != "exit"   
             API.genres(input)
-            
             display_name
-            anime_information
         end
+        anime_information
     end
 
        
@@ -41,35 +39,55 @@ class CLI
     end
 
     
+    
     def anime_information
     puts "Please type the number of the anime you would like more information of."
     input = ""
-        while input != "exit"
-        input = gets.strip.to_i
-            if (1..Anime.all.length).include?(input)
-        anime = Anime.all.sort_by(&:title)[input - 1]
+    input = gets.strip.to_i
         
-        puts "---------------- Anime Title:#{anime.title}, ----------------------
+            if (1..Anime.all.length).include?(input)
+                anime = Anime.all.sort_by(&:title)[input - 1]
+            puts "---------------- Anime Title:#{anime.title}, ----------------------
 Synopsis:#{anime.synopsis}, 
 URL:#{anime.url}, 
 Type:#{anime.type}, 
 Number of Episodes:#{anime.episodes}, 
 Score:#{anime.score}" 
+            else input = !(1..Anime.all.length).include?(input)
+                puts "Please input valid number"
+                anime_information
+            
             end
-        puts "Would you like to go back or exit?"
-        input = gets.strip
+            puts "Would you like to go back or exit?"
+            input = gets.strip
             if input == "go back"
-            start
-            if input == "exit"
-            exit
-            else
-            puts "Please input valid number"
-                end
+                start
+            else input == "exit"
+                exit
             end
         end
     end
-end
 
+
+# def valid_anime?(input)
+    #     if input == API.genres(input) 
+    #         return true
+    #     else
+    #         return false
+    #     end
+    # end
+
+    # def valid_num?(input)
+    #     if input == (1..Anime.all.length)
+    #         return true
+    #     else
+    #         return false
+    #     end
+    # end
+    
+
+# if valid_anime?(input) && input != "exit"
+# valid_anime?(input) && valid_num?(input) &&
     
     # input != API.genres(input)
     # puts "Please input valid request"

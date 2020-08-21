@@ -3,6 +3,7 @@ class API
 
 
     def self.genres(input)
+       
         case input
         when "action"
             self.get_info(1)
@@ -30,8 +31,9 @@ class API
             exit
             
         else
+            system("clear")
             puts "Please type in a valid request"
-            
+            CLI.new.start
         end
     end
     
@@ -50,9 +52,14 @@ class API
     end
 end
 
+
     
     
+
+
     
+    
+     # if CLI.valid_input?(input)
     # binding.pry
     # API.genres(input)
         # def self.action
