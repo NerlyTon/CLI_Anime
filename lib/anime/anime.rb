@@ -1,5 +1,6 @@
 class Anime
 
+# holds the information all into one place.
 attr_accessor :title, :url, :synopsis, :type, :episodes, :score 
 @@all = []
 

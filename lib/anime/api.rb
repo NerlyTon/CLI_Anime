@@ -1,7 +1,7 @@
 
 class API
 
-
+# the input is passed and interpolated into the url to receive the specific genre based on users input.
     def self.genres(input)
        
         case input
@@ -38,7 +38,7 @@ class API
     end
     
     
-    
+# API get request to grab the information from the website.
     def self.get_info(num)
             genre = RestClient.get "https://api.jikan.moe/v3/genre/anime/#{num}/1" 
             

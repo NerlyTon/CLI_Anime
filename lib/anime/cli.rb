@@ -1,6 +1,8 @@
 require 'pry'
 class CLI
 
+
+# starts the program and list the options for the user 
     def start
         puts "Welcome anime fan!"
         puts "Please choose a genre by name."
@@ -19,7 +21,8 @@ class CLI
         genre
     end
 
-    
+  
+# Receives the input and calls on the genres class method.
     def genre
         input = ""
         input = gets.strip.downcase
@@ -31,7 +34,7 @@ class CLI
     end
 
        
-       
+# sorts by alphabetical order and adds an index to each title.    
     def display_name
         Anime.all.sort {|a, b| a.title <=> b.title}.each.with_index(1) do |k, i|
         puts "#{i}. #{k.title}"
@@ -39,7 +42,7 @@ class CLI
     end
 
     
-    
+ # Receives the input and displays the specific information for the users choice. User is able to go back or exit program.   
     def anime_information
     puts "Please type the number of the anime you would like more information of."
     input = ""
