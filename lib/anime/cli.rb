@@ -26,11 +26,15 @@ class CLI
     def genre
         input = ""
         input = gets.strip.downcase
-        if input != "exit"   
+        if input == "exit"
+        exit
+        else input != "exit"   
             API.genres(input)
-            display_name
+        
+        display_name
         end
         anime_information
+        
     end
 
        
@@ -64,12 +68,14 @@ Score:#{anime.score}"
             puts "Would you like to go back or exit?"
             input = gets.strip
             if input == "go back"
+                system("clear")
                 start
             else input == "exit"
                 exit
             end
         end
     end
+
 
 
 # def valid_anime?(input)

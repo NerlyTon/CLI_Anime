@@ -29,7 +29,6 @@ class API
             self.get_info(41)
         when "exit"
             exit
-            
         else
             system("clear")
             puts "Please type in a valid request"

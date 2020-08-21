@@ -1,8 +1,9 @@
 # Anime
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/anime`. To experiment with that code, run `bin/console` for an interactive prompt.
+Anime CLI gives the user the option to find information about an anime based on their genre! 
+User will first choose a genre from the list, which will take them to a list of anime titles. From then the user can pick a title by its index and receive 1.Title, 2.Synopsis, 3.URL, 4.Type, 5.Number of Episodes, and 6. Score. The Anime ClI is a great way to discover new anime to watch!
 
-TODO: Delete this and the text above, and describe your gem
+
 
 ## Installation
 
